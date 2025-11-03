@@ -1,0 +1,21 @@
+{% extends "layout.jinja2" %}
+
+<!-- templates/success.jinja2 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Submission Successful</title>
+</head>
+{% block content %}
+<body>
+    <h1>Thank You!</h1>
+    <p>Your questionnaire has been successfully submitted.</p>
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+    <p><a href="{{ request.route_url('home') }}">Return to the questionnaire</a></p>
+</body>
+{% endblock content %}
+</html>
+

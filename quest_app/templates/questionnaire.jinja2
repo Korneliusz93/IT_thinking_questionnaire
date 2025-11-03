@@ -1,0 +1,51 @@
+{% extends "layout.jinja2" %}
+
+{% block content %}
+<!-- questionnaire.html -->
+<p>Please answer the following questions:</p>
+<form action="{{ request.route_url('home') }}" method="post">
+  <label>Should technical blogs be created?</label><br>
+  <input type="radio" name="technical_blogs" value="YES" required> Yes<br>
+  <input type="radio" name="technical_blogs" value="NO"> No<br><br>
+
+  <label>Does programming change your way of thinking?</label><br>
+  <input type="radio" name="programming_changes_thinking" value="NO" required> No<br>
+  <input type="radio" name="programming_changes_thinking" value="YES"> If yes, how:<br>
+  <textarea name="programming_changes_detail" rows="3" cols="40"></textarea><br><br>
+
+  <label>Is coding an art or a tool?</label><br>
+  <input type="radio" name="coding_art_tool" value="ART" required> Art<br>
+  <input type="radio" name="coding_art_tool" value="TOOL"> Tool<br><br>
+
+  <label>Will machines replace human creativity?</label><br>
+  <input type="radio" name="machines_replace_creativity" value="YES" required> Yes<br>
+  <input type="radio" name="machines_replace_creativity" value="NO"> No<br><br>
+
+  <label>Do you convey values through your projects?</label><br>
+  <input type="radio" name="convey_values" value="NO" required> No<br>
+  <input type="radio" name="convey_values" value="YES"> If yes, which:<br>
+  <textarea name="convey_values_detail" rows="3" cols="40"></textarea><br><br>
+
+  <label>Does technology bring people together or divide?</label><br>
+  <input type="radio" name="technology_unite_divide" value="BRINGS_TOGETHER" required> Brings together<br>
+  <input type="radio" name="technology_unite_divide" value="DIVIDES"> Divides<br><br>
+
+  <label>Are there ethical challenges in IT?</label><br>
+  <input type="radio" name="ethical_challenges" value="NO" required> No<br>
+  <input type="radio" name="ethical_challenges" value="YES"> If yes, what:<br>
+  <textarea name="ethical_challenges_detail" rows="3" cols="40"></textarea><br><br>
+
+  <label>Is it worth sharing knowledge?</label><br>
+  <input type="radio" name="worth_sharing_knowledge" value="YES" required> Yes<br>
+  <input type="radio" name="worth_sharing_knowledge" value="NO"> No<br><br>
+
+  <label>How do you define success as a creator? (optional)</label><br>
+  <textarea name="define_success" rows="3" cols="40"></textarea><br><br>
+
+  <label>What is the role of AI in your work? (optional)</label><br>
+  <textarea name="role_of_ai" rows="3" cols="40"></textarea><br><br>
+
+  <input type="submit" name="submit" value="Send">
+</form>
+
+{% endblock content %}
