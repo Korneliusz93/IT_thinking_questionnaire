@@ -75,6 +75,33 @@ class QuestionnairePage(colander.MappingSchema):
         missing='',
         widget=deform.widget.TextAreaWidget()
     )
+    work_influence_society = colander.SchemaNode(
+        colander.String(),
+        validator=colander.OneOf(['YES', 'NO']),
+        widget=deform.widget.RadioChoiceWidget(values=[('YES', 'Yes'), ('NO', 'No')])
+    )
+    social_media_support = colander.SchemaNode(
+        colander.String(),
+        validator=colander.OneOf(['YES', 'NO']),
+        widget=deform.widget.RadioChoiceWidget(values=[('YES', 'Yes'), ('NO', 'No')])
+    )
+    responsible_social_impact = colander.SchemaNode(
+        colander.String(),
+        validator=colander.OneOf(['YES', 'NO']),
+        widget=deform.widget.RadioChoiceWidget(values=[('YES', 'Yes'), ('NO', 'No')])
+    )
+    importance_engage_wider = colander.SchemaNode(
+        colander.String(),
+        validator=colander.OneOf(['YES', 'NO']),
+        widget=deform.widget.RadioChoiceWidget(values=[('YES', 'Yes'), ('NO', 'No')])
+    )
+    online_participation_changed = colander.SchemaNode(
+        colander.String(),
+        validator=colander.OneOf(['YES', 'NO']),
+        widget=deform.widget.RadioChoiceWidget(values=[('YES', 'Yes'), ('NO', 'No')])
+    )
+
+
 
 
 @view_config(route_name='home', renderer='/templates/questionnaire.jinja2')
